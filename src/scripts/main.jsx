@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import Welcome from './welcome';
+import TestScreen from './testscreen';
 
 require('../css/main.scss');
 
@@ -15,7 +15,7 @@ class App extends React.Component {
           </div>
         </div>
         <div className="app-main">
-          <Welcome />
+          <TestScreen />
         </div>
       </div>
     )

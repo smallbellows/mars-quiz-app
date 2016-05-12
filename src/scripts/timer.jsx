@@ -4,7 +4,7 @@ export default class Timer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      secondsLeft: 60
+      secondsLeft: 120
     }
   }
 
@@ -12,17 +12,24 @@ export default class Timer extends React.Component {
     this.timer = setInterval(this._countdown.bind(this), 1000);
   }
 
+  componentWillUnmount() {
+    clearInterval(this.timer);
+  }
+
   _countdown() {
-    this.setState({ secondsLeft: this.state.secondsLeft - 1});
+    if (this.state.secondsLeft > 0) {
+      this.setState({ secondsLeft: this.state.secondsLeft - 1});
+    }
   }
 
   _renderCountdown() {
     let min = Math.floor(this.state.secondsLeft / 60);
     let sec = this.state.secondsLeft % 60;
-    if (sec < 10) sec = `0${sec}`;
+    if (sec < 10) {
+      sec = `0${sec}`;
+    }
 
     return (<span>{min} : {sec}</span> )
-
   }
 
   render () {

@@ -32,6 +32,10 @@ module.exports = {
             {
                 test: /\.scss$/,
                 loaders: ['style', 'css', 'sass']
+            },
+            {
+              test: /\.(png|jpg|gif)$/,
+              loader: "file-loader?name=img/img-[hash].[ext]" 
             }
         ]
     },

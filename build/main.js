@@ -20354,19 +20354,56 @@
 	var Timer = function (_React$Component) {
 	  _inherits(Timer, _React$Component);
 	
-	  function Timer() {
+	  function Timer(props) {
 	    _classCallCheck(this, Timer);
 	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Timer).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Timer).call(this, props));
+	
+	    _this.state = {
+	      secondsLeft: 120
+	    };
+	    return _this;
 	  }
 	
 	  _createClass(Timer, [{
+	    key: "componentDidMount",
+	    value: function componentDidMount() {
+	      this.timer = setInterval(this._countdown.bind(this), 1000);
+	    }
+	  }, {
+	    key: "componentWillUnmount",
+	    value: function componentWillUnmount() {
+	      clearInterval(this.timer);
+	    }
+	  }, {
+	    key: "_countdown",
+	    value: function _countdown() {
+	      if (this.state.secondsLeft > 0) {
+	        this.setState({ secondsLeft: this.state.secondsLeft - 1 });
+	      }
+	    }
+	  }, {
+	    key: "_renderCountdown",
+	    value: function _renderCountdown() {
+	      var min = Math.floor(this.state.secondsLeft / 60);
+	      var sec = this.state.secondsLeft % 60;
+	      if (sec < 10) sec = "0" + sec;
+	
+	      return React.createElement(
+	        "span",
+	        null,
+	        min,
+	        " : ",
+	        sec
+	      );
+	    }
+	  }, {
 	    key: "render",
 	    value: function render() {
 	      return React.createElement(
 	        "div",
 	        { className: "timer" },
-	        "Timer"
+	        this._renderCountdown()
 	      );
 	    }
 	  }]);
@@ -20435,7 +20472,7 @@
 	var content = __webpack_require__(173);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(175)(content, {});
+	var update = __webpack_require__(176)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -20460,7 +20497,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline; }\n\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\nbody {\n  line-height: 1; }\n\nol, ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\n.mars-app {\n  width: 100vw;\n  height: 100vh;\n  display: flex;\n  flex-direction: row;\n  font-size: 16px;\n  font-family: sans-serif; }\n\nh1 {\n  font-size: 3rem;\n  font-weight: bolder; }\n\n.sidebar {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  width: 150px;\n  border: 1px solid red; }\n  .sidebar h1 {\n    position: absolute;\n    top: 100px;\n    text-transform: uppercase;\n    transform: rotate(-90deg);\n    color: #999999; }\n  .sidebar .icon {\n    width: 75px;\n    height: 75px;\n    border-radius: 50%;\n    border: 1px solid red;\n    background: red; }\n\n.app-main {\n  width: 100%;\n  height: 100%;\n  border: 1px solid red;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n", ""]);
+	exports.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline; }\n\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\nbody {\n  line-height: 1; }\n\nol, ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\n.mars-app {\n  width: 100vw;\n  height: 100vh;\n  display: flex;\n  flex-direction: row;\n  font-size: 16px;\n  font-family: sans-serif; }\n\nh1 {\n  font-size: 3rem;\n  font-weight: bolder; }\n\n.sidebar {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  width: 150px;\n  border: 1px solid red; }\n  .sidebar h1 {\n    position: absolute;\n    top: 100px;\n    text-transform: uppercase;\n    transform: rotate(-90deg);\n    color: #999999; }\n  .sidebar .icon {\n    width: 75px;\n    height: 75px;\n    border-radius: 50%;\n    border: 1px solid red;\n    background: red; }\n\n.app-main {\n  width: 100%;\n  height: 100%;\n  border: 1px solid red;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background: url(" + __webpack_require__(175) + "); }\n\n.timer {\n  position: absolute;\n  top: 25px;\n  right: 25px;\n  width: 150px;\n  height: 50px;\n  border: 1px solid red; }\n", ""]);
 	
 	// exports
 
@@ -20523,6 +20560,12 @@
 
 /***/ },
 /* 175 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "img/img-022d656213cb5d264000fe3cead61cf4.jpg";
+
+/***/ },
+/* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
