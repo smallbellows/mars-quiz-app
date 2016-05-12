@@ -14,7 +14,6 @@ export default class TestScreen extends React.Component {
   }
 
   _startEval() {
-
     this.setState({start: true});
   }
 
@@ -23,11 +22,15 @@ export default class TestScreen extends React.Component {
     return(
       <div>
         {this.state.start ? <Timer /> : ''}
-        <button
+        {!this.state.start ?
+          <button
           onClick={this._startEval.bind(this)}
           >
           Begin Evaluation
         </button>
+        :
+        <QuestionBox /> }
+
       </div>
     )
   }

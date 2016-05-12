@@ -3,19 +3,29 @@ import TestScreen from './testScreen';
 
 export default class Welcome extends React.Component {
 
+  constructor(props){
+    super(props);
+    this.state = {
+      ready: false
+    }
+  }
   _takeQuiz( ) {
-    this.ref.readyButton
+    this.setState({ready: true});
   }
 
   render() {
     return (
       <div>
-        <button
-          onClick={this._takeQuiz.bind(this)}
-          ref="readyButton">
-          Are you ready to drive the newest Mars Rover?
-        </button>
+        {!this.state.ready ?
+          <button
+            onClick={this._takeQuiz.bind(this)}
+            >
+            Are you ready to drive the newest Mars Rover?
+          </button>
+        :
         <TestScreen />
+        }
+
       </div>
     )
   }

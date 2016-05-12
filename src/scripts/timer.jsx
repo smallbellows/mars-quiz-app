@@ -6,7 +6,7 @@ export default class Timer extends React.Component {
     this.state = {
       secondsLeft: 120
     }
-  }
+  };
 
   componentDidMount() {
     this.timer = setInterval(this._countdown.bind(this), 1000);
@@ -29,7 +29,7 @@ export default class Timer extends React.Component {
       sec = `0${sec}`;
     }
 
-    return (<span>{min} : {sec}</span> )
+    return (<span>{min}:{sec}</span> )
   }
 
   render () {
