@@ -1,17 +1,14 @@
 export const questions = [
   {
     quest: 'question1',
-    answer: 'answer1',
-    correct: false
+    answer: '1'
   },
   {
     quest: 'question2',
-    answer: 'answer2',
-    correct: false
+    answer: '2'
   },
   {
     quest: 'question3',
-    answer: 'answer3',
-    correct: false
+    answer: '3'
   }
 ]

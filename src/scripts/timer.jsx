@@ -19,6 +19,8 @@ export default class Timer extends React.Component {
   _countdown() {
     if (this.state.secondsLeft > 0) {
       this.setState({ secondsLeft: this.state.secondsLeft - 1});
+    } else {
+      this.props.endQuiz(false); 
     }
   }
 

@@ -7,8 +7,7 @@ export default class TestScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      questionsCompleted: 0,
-      questionsCorrect: 0,
+
       start: false
     }
   }
@@ -17,11 +16,25 @@ export default class TestScreen extends React.Component {
     this.setState({start: true});
   }
 
+  _endQuiz(success) {
+
+    // this.setState({start: false});
+    if (success) {
+      console.log('pass');
+    }
+    else {
+      console.log('fail');
+    }
+  }
+
   render () {
 
     return(
       <div>
-        {this.state.start ? <Timer /> : ''}
+        {this.state.start ?
+          <Timer
+            endQuiz={this._endQuiz.bind(this)}
+          /> : ''}
         {!this.state.start ?
           <button
           onClick={this._startEval.bind(this)}
@@ -29,7 +42,9 @@ export default class TestScreen extends React.Component {
           Begin Evaluation
         </button>
         :
-        <QuestionBox currentQ={this.state.questionsCompleted}/> }
+        <QuestionBox
+          currentQ={this.state.questionsCompleted}
+          endQuiz={this._endQuiz.bind(this)}/> }
 
       </div>
     )
