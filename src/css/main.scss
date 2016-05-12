@@ -1,0 +1,58 @@
+@import '_reset';
+
+.mars-app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  border: 1px solid red;
+
+  h1 {
+    position: absolute;
+    top: 100px;
+    text-transform: uppercase;
+    transform: rotate(-90deg);
+    color: #999999;
+  }
+
+  .icon {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: 1px solid red;
+    background: red;
+  }
+}
+
+.app-main {
+  width: 100%;
+  height: 100%;
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 150px;
+  height: 50px;
+  border: 1px solid red;
+}
