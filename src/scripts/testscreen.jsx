@@ -29,7 +29,7 @@ export default class TestScreen extends React.Component {
           Begin Evaluation
         </button>
         :
-        <QuestionBox /> }
+        <QuestionBox currentQ={this.state.questionsCompleted}/> }
 
       </div>
     )
