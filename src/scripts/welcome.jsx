@@ -4,12 +4,6 @@ import TestScreen from './testscreen';
 
 export default class Welcome extends React.Component {
 
-  constructor(props){
-    super(props);
-    this.state = {
-      ready: false
-    }
-  }
   _takeQuiz( ) {
     browserHistory.push('test');
   }
@@ -23,8 +17,6 @@ export default class Welcome extends React.Component {
             >
             Are you ready to drive the newest Mars Rover?
           </button>
-
-
 
     )
   }

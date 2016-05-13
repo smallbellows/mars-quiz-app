@@ -17,25 +17,11 @@ export default class TestScreen extends React.Component {
     this.setState({start: true});
   }
 
-  _endQuiz(success) {
-
-    // this.setState({start: false});
-    if (success) {
-      console.log('pass');
-    }
-    else {
-      console.log('fail');
-    }
-  }
-
   render () {
 
     return(
       <div>
-        {this.state.start ?
-          <Timer
-            endQuiz={this._endQuiz.bind(this)}
-          /> : ''}
+        {this.state.start ? <Timer /> : ''}
         {!this.state.start ?
           <button
           className="main-button"
@@ -44,9 +30,7 @@ export default class TestScreen extends React.Component {
           Begin Evaluation
         </button>
         :
-        <QuestionBox
-          currentQ={this.state.questionsCompleted}
-          endQuiz={this._endQuiz.bind(this)}/> }
+        <QuestionBox/> }
 
       </div>
     )

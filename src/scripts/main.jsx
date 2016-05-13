@@ -3,6 +3,8 @@ import * as ReactDOM from 'react-dom';
 import { Router, Route, browserHistory, Redirect} from 'react-router';
 import Welcome from './welcome';
 import TestScreen from './testscreen';
+import Success from './success';
+import TryAgain from './tryagain';
 
 require('../css/main.scss');
 
@@ -14,6 +16,8 @@ class App extends React.Component {
           <Redirect from="/" to="/welcome"/>
           <Route path="/welcome"component={Welcome} />
           <Route path="/test" component={TestScreen} />
+          <Route path="/success" component={Success} />
+          <Route path="/tryagain" component={TryAgain} />
         </Router>
       </div>
     )

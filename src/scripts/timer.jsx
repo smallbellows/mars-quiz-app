@@ -20,7 +20,7 @@ export default class Timer extends React.Component {
     if (this.state.secondsLeft > 0) {
       this.setState({ secondsLeft: this.state.secondsLeft - 1});
     } else {
-      this.props.endQuiz(false); 
+      browserHistory.push('tryagain');
     }
   }
 

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {browserHistory} from 'react-router';
 import {questions} from './questions';
 
 export default class QuestionBox extends React.Component {
@@ -40,9 +41,9 @@ constructor(props) {
     }
 
     if (correctAnswers === questions.length) {
-      console.log('pass');
+      browserHistory.push('success');
     } else {
-      console.log('fail');
+      browserHistory.push('tryagain');
     }
 
   }
