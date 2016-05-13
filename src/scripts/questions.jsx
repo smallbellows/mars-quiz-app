@@ -1,14 +1,14 @@
 export const questions = [
   {
-    quest: 'question1',
-    answer: '1'
+    quest: 'Do you love Mars?',
+    answer: 'yes'
   },
   {
-    quest: 'question2',
-    answer: '2'
+    quest: 'Can you code in C++ and C?',
+    answer: 'yes'
   },
   {
-    quest: 'question3',
-    answer: '3'
+    quest: 'Do you work well as part of a team?',
+    answer: 'yes'
   }
 ]

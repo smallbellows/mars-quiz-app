@@ -24,20 +24,25 @@ constructor(props) {
       this.refs.userAnswer.value = '';
 
       if (this.state.currentQ < questions.length -1) {
-        this.setState({currentQ: this.state.currentQ +1 });
-      } else {
-        this._endQuiz();
+        this.setState({currentQ: this.state.currentQ +1});
       }
+
+      if(this.state.currentQ === questions.length -1) {
+        console.log(this.state.currentQ);
+        console.log(this.state.correctAnswers);
+      }
+
   }
-  
-  _endQuiz() {
-    console.log(this.state.correctAnswers);
+
+  componentDidUpdate() {
+
+
   }
 
   render () {
     return (
       <div className="question">
-        <span>{questions[this.state.currentQ].quest}</span>
+        <div>{questions[this.state.currentQ].quest}</div>
         <form>
           <input type="text" ref="userAnswer"/>
           <button

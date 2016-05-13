@@ -37,6 +37,7 @@ export default class TestScreen extends React.Component {
           /> : ''}
         {!this.state.start ?
           <button
+          className="main-button"
           onClick={this._startEval.bind(this)}
           >
           Begin Evaluation

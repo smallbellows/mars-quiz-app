@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import Welcome from './testscreen';
+import Welcome from './welcome';
 
 require('../css/main.scss');
 

@@ -17,7 +17,7 @@ export default class Welcome extends React.Component {
     return (
       <div>
         {!this.state.ready ?
-          <button
+          <button className="main-button"
             onClick={this._takeQuiz.bind(this)}
             >
             Are you ready to drive the newest Mars Rover?
