@@ -16,22 +16,25 @@ constructor(props) {
   _submitAnswer(e) {
     e.preventDefault();
 
-    let userAnswer = this.refs.userAnswer.value.toLowerCase();
-    let correctAnswer = questions[this.state.currentQ].answer.toLowerCase();
+    if(this.refs.userAnswer.value){
+      
+      let userAnswer = this.refs.userAnswer.value.toLowerCase();
+      let correctAnswer = questions[this.state.currentQ].answer.toLowerCase();
 
-      if (userAnswer === correctAnswer) {
-        correctAnswers ++;
-      }
+        if (userAnswer === correctAnswer) {
+          correctAnswers ++;
+        }
 
-      this.refs.userAnswer.value = '';
+        this.refs.userAnswer.value = '';
 
-      if (this.state.currentQ < questions.length -1) {
-        this.setState({currentQ: this.state.currentQ +1});
-      }
+        if (this.state.currentQ < questions.length -1) {
+          this.setState({currentQ: this.state.currentQ +1});
+        }
 
-      if(this.state.currentQ === questions.length -1) {
-        this._endQuiz();
-      }
+        if(this.state.currentQ === questions.length -1) {
+          this._endQuiz();
+        }
+    }
   }
 
   _endQuiz() {

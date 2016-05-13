@@ -8,8 +8,9 @@ export default class TestScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      start: false
-      
+      start: false,
+      timeAllotted: 60,
+
     }
   }
 
@@ -21,7 +22,7 @@ export default class TestScreen extends React.Component {
 
     return(
       <div>
-        {this.state.start ? <Timer /> : ''}
+        {this.state.start ? <Timer timeAllotted={this.state.timeAllotted}/> : ''}
         {!this.state.start ?
           <button
           className="main-button"
