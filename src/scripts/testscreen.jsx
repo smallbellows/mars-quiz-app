@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {browserHistory} from 'react-router';
 import Timer from './timer';
 import QuestionBox from './questionbox';
 

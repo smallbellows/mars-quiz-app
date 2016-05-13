@@ -1,5 +1,6 @@
 import * as React from 'react';
-import TestScreen from './testScreen';
+import {browserHistory} from 'react-router';
+import TestScreen from './testscreen';
 
 export default class Welcome extends React.Component {
 
@@ -10,23 +11,21 @@ export default class Welcome extends React.Component {
     }
   }
   _takeQuiz( ) {
-    this.setState({ready: true});
+    browserHistory.push('test');
   }
 
   render() {
     return (
-      <div>
-        {!this.state.ready ?
-          <button className="main-button"
-            onClick={this._takeQuiz.bind(this)}
+
+          <button
+            className="main-button"
+            onClick={this._takeQuiz}
             >
             Are you ready to drive the newest Mars Rover?
           </button>
-        :
-        <TestScreen />
-        }
 
-      </div>
+
+
     )
   }
 }

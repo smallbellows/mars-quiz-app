@@ -28,16 +28,25 @@ constructor(props) {
       }
 
       if(this.state.currentQ === questions.length -1) {
-        console.log(this.state.currentQ);
-        console.log(this.state.correctAnswers);
+        this._endQuiz(userAnswer===correctAnswer);
       }
+  }
+
+  _endQuiz(lastWasCorrect) {
+
+    let correctAnswers = this.state.correctAnswers;
+    if (lastWasCorrect) {
+      correctAnswers ++;
+    }
+
+    if (correctAnswers === questions.length) {
+      console.log('pass');
+    } else {
+      console.log('fail');
+    }
 
   }
 
-  componentDidUpdate() {
-
-
-  }
 
   render () {
     return (

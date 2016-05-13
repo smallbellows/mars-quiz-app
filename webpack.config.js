@@ -14,10 +14,12 @@ module.exports = {
       inline: true,
       host: '0.0.0.0',
       port: '3000',
+      compress: true,
       watchOptions: {
             aggregateTimeout: 300,
-            poll: true
-      }
+            poll: 2000
+      },
+      historyApiFallback: true
     },
     module: {
          loaders: [
@@ -34,8 +36,8 @@ module.exports = {
                 loaders: ['style', 'css', 'sass']
             },
             {
-              test: /\.(png|jpg|gif)$/,
-              loader: "file-loader?name=img/img-[hash].[ext]" 
+              test: /\.(png|jpg|gif|svg)$/,
+              loader: "file-loader?name=img/img-[name].[ext]"
             }
         ]
     },
