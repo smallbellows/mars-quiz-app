@@ -2,13 +2,14 @@ import * as React from 'react';
 import {browserHistory} from 'react-router';
 import {questions} from './questions';
 
+let correctAnswers = 0;
+
 export default class QuestionBox extends React.Component {
 
 constructor(props) {
   super(props);
   this.state={
     currentQ: 0,
-    correctAnswers: 0
   }
 }
 
@@ -19,7 +20,7 @@ constructor(props) {
     let correctAnswer = questions[this.state.currentQ].answer.toLowerCase();
 
       if (userAnswer === correctAnswer) {
-        this.setState({correctAnswers: this.state.correctAnswers +1})
+        correctAnswers ++;
       }
 
       this.refs.userAnswer.value = '';
@@ -29,23 +30,17 @@ constructor(props) {
       }
 
       if(this.state.currentQ === questions.length -1) {
-        this._endQuiz(userAnswer===correctAnswer);
+        this._endQuiz();
       }
   }
 
-  _endQuiz(lastWasCorrect) {
-
-    let correctAnswers = this.state.correctAnswers;
-    if (lastWasCorrect) {
-      correctAnswers ++;
-    }
+  _endQuiz() {
 
     if (correctAnswers === questions.length) {
       browserHistory.push('success');
     } else {
       browserHistory.push('tryagain');
     }
-
   }
 
 
