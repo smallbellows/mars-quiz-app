@@ -1,5 +1,7 @@
 import * as React from 'react';
 import {browserHistory} from 'react-router';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import '../css/transitions.scss';
 import Timer from './timer';
 import QuestionBox from './questionbox';
 
@@ -10,7 +12,6 @@ export default class TestScreen extends React.Component {
     this.state = {
       start: false,
       timeAllotted: 60,
-
     }
   }
 
@@ -22,7 +23,9 @@ export default class TestScreen extends React.Component {
 
     return(
       <div>
-        {this.state.start ? <Timer timeAllotted={this.state.timeAllotted}/> : ''}
+        {this.state.start ?
+            <Timer timeAllotted={this.state.timeAllotted}/>
+           : ''}
         {!this.state.start ?
           <button
           className="main-button"

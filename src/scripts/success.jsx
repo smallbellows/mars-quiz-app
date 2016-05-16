@@ -6,7 +6,7 @@ export default class Success extends React.Component {
   render() {
     return (
       <div className="end success">
-        Success!!!
+        <img src="../img/img-explorer.svg"/>
       </div>
     )
   }
