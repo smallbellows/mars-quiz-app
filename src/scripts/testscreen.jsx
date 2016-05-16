@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {browserHistory} from 'react-router';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import '../css/transitions.scss';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';  
 import Timer from './timer';
 import QuestionBox from './questionbox';
 

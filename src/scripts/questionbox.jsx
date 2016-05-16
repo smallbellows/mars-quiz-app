@@ -17,7 +17,7 @@ constructor(props) {
     e.preventDefault();
 
     if(this.refs.userAnswer.value){
-      
+
       let userAnswer = this.refs.userAnswer.value.toLowerCase();
       let correctAnswer = questions[this.state.currentQ].answer.toLowerCase();
 
@@ -50,7 +50,7 @@ constructor(props) {
   render () {
     return (
       <div className="question">
-        <div>{questions[this.state.currentQ].quest}</div>
+        <div><p>{questions[this.state.currentQ].quest}</p></div>
         <form>
           <input type="text" ref="userAnswer"/>
           <button

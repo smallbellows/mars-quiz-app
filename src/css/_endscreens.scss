@@ -1,16 +1,77 @@
+@keyframes rover {
+
+  0% {
+    opacity: 0;
+    left: -30px;
+  }
+  5% {
+    opacity: 1;
+  }
+  100% {
+    left: 80%;
+  }
+}
+
+@keyframes success-text {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes try-again {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
 .end {
   width: 100%;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    text-transform: uppercase;
+    color: white;
+  }
 }
 
 .success {
   background: green;
+  position: relative;
+
+  h1 {
+    animation: success-text 5s linear forwards;
+  }
 
   img {
     width: 200px;
+    position: absolute;
+    bottom: 30px;
+    left: 80%;
+    animation: rover 5s ease forwards;
   }
 }
 
 .try-again {
   background: red;
+
+  button {
+    background: none;
+    animation: try-again 1s 0s 4 ease-out;
+  }
 }
