@@ -9,7 +9,7 @@
 
 h1 {
   font-size: 3rem;
-  font-weight: bolder;
+
 }
 
 p {
@@ -17,13 +17,14 @@ p {
 }
 
 .sidebar {
+  min-width: 150px;
+  max-width: 150px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex: 0 1 20%;
-  min-width: 150px;
-  max-width: 150px;
+
 
   h1 {
     position: absolute;
@@ -31,6 +32,7 @@ p {
     text-transform: uppercase;
     transform: rotate(-90deg);
     color: #999999;
+    letter-spacing: 0.2em;
   }
 
   .icon {

@@ -3,19 +3,19 @@
 .main-button {
   width: 400px;
   height: 200px;
+  border-radius: $corner;
+  border: none;
+  outline: none;
   background: $shaded-background;
   color: white;
   font-size: 2rem;
-  border: none;
-  outline: none;
-  border-radius: $corner;
   cursor: pointer;
 }
 
 .question {
   width: 500px;
-  margin: 0 auto;
   height: 200px;
+  margin: 0 auto;
   background: $shaded-background;
   display: flex;
   flex-direction: column;

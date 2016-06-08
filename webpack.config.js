@@ -5,8 +5,9 @@ module.exports = {
         main: './src/scripts/main.jsx'
     },
     output: {
-        filename: './build/main.js',
-        // publicPath: '/build/'
+        filename: 'main.js',
+        publicPath: '/build/',
+        path: path.join(__dirname, 'build/')
     },
     devtool: '#source-map',
     devServer: {
