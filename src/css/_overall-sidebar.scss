@@ -43,13 +43,13 @@ p {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background: url('../mars-globe.png') center center;
+    background: url('../images/mars-globe.png') center center;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
 
-   
+
 
     i {
       font-size: 60px;
@@ -73,7 +73,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('../mars-bkgrnd.jpg');
+    background: url('../images/mars-bkgrnd.jpg');
     background-size: cover;
 
      @include mobile {
